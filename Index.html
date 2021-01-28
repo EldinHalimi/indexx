@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>simple page</title>
+
+        <meta name="viewport" content="width=device-width">
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <nav>
+        <ul class="nav-links">
+            <li class="a1">
+                <a href="#section">Home</a>
+            </li>
+            <li class="a2">
+                <a href="#section">Prices</a>
+            </li>
+            <li class="a3">
+                <a href="#section">About us</a>
+            </li>
+            <li class="a4">
+                <a href="#section">Contact</a>
+            </li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <section>
+    <h1 class="landing-h1">Get started by typing your email</h1>
+    <h3 class="landing-h3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In imperdiet ligula massa, ac sollicitudin sapien tempor ac. Quisque maximus rutrum nulla et sodales</h3>
+    <input type="text" placeholder="Type your email" class="search-section">
+    <button type="submit" class="Get-Started-button">Get started</button>
+    </section>
+    <div class="overlay-black"></div>
+    <script src="app.js"></script>
+    </body> 
+</html>
+<style>
+    /* Global */
+    body{
+        width: auto;
+        background-image: url(background.jpg);
+        margin: auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    /* Navigation Bar */
+    nav{
+        height: 60px;
+        
+    }
+    .nav-links{
+        display: inline;
+        float: right;       
+    }
+    nav ul li a{
+        color: white;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        padding: 0 20px 0 20px;
+        position: relative;
+        top: 24px;
+        z-index: 3;
+        font-size: 20px;
+    }
+    nav ul li a:hover{
+        border: 3px solid #58FAF4;
+        border-right: none;
+        border-left: none;
+        transition: .3s;
+    }
+    nav ul{
+        margin: 0;
+        padding: 0;
+    }
+    nav li{
+        display: inline;
+        padding: 0 30px 0 30px;
+    }
+    /* responsive navigation bar button */
+    .burger{
+        display: none;
+        cursor: pointer;
+    }
+    .burger div{
+        border: black solid 1px;
+        width: 32px;
+        height: 6px;
+        margin: 5px;
+        background-color: white;
+        z-index: 1;
+        position: relative;
+    }
+    @media screen and (max-width: 768px){
+        /* GLOBAL */
+        body{
+            overflow-x: hidden;
+        }
+        /* navigation bar */
+        .a1{
+            position: relative;
+            top: 0px;
+            z-index: 4;
+        }
+        .a2{
+            position: relative;
+            top: 100px;
+            z-index: 4;
+        }
+        .a3{
+            position: relative;
+            top: 200px;
+            padding: 20px 0 20px 0;
+            z-index: 4;
+        }
+        .a4{
+            position: relative;
+            top: 300px;
+            z-index: 4;
+        }
+        .nav-links{
+            position: absolute;
+            right: 0px;
+            height: 92vh;
+            top: 8vh;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            transition: transform .5s ease-in;
+            transform: translate(100%);
+            z-index: 2;
+            align-items: center;
+        }
+        .nav-links a:hover{
+            border: none;
+        }
+        nav ul li a{
+            opacity: 100%;
+        }
+        /* responsive button navigation bar */
+        .burger{
+            position: relative;
+            left: -15px;
+            top: 5px;
+            float: right;
+            display: block;
+            cursor: pointer;
+        }
+    }
+    .nav-active{
+        transform: translate(0%);
+    }
+    /* Section */
+    section{
+        height: 700px;
+        position: relative;
+        top: -20px;
+        text-align: center;
+    }
+    /* search bar */
+    .search-section{
+        width: 450px;
+        height: 40px;
+        border-radius: 5px;
+        outline: none;
+        border: solid 2px black;
+        position: relative;
+        top: 150px;
+        left: 90px;
+        z-index: 1;
+        font-size: 20px;
+        text-align: center;
+    }
+    @media(max-width: 768px){
+        .search-section{
+            left: 110px;
+        }
+    }
+    @media(max-width: 730px){
+         .search-section{
+             position: relative;
+             left: -10px;
+         }
+    }
+    @media(max-width: 550px){
+         .search-section{
+            width: 350px;
+         }
+    }
+    @media(max-width: 380px){
+         .search-section{
+            left: 0px;
+         }
+    }
+    @media(max-width: 360px){
+        .search-section{
+            width: 300px;
+        }
+    }
+    @media(max-width: 300px){
+        .search-section{
+            width: 270px;
+        }
+    }
+    /* button (Get Started) */
+    .Get-Started-button{
+        width: 240px;
+        background-color: lightseagreen;
+        height: 40px;
+        border: 2px solid black;
+        border-radius: 3px;
+        position: relative;
+        top: 200px;
+        left: -270px;
+        cursor: pointer;
+        font-size: 18px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        z-index: 1;
+        outline: none;
+    }
+    .Get-Started-button:hover{
+            background-color: #084B8A;
+            transition: .4s;
+            z-index: 1;
+}
+    @media(max-width: 768px){
+        .Get-Started-button{
+            left: -230px;
+        }
+    }
+   @media(max-width: 730px){
+       .Get-Started-button{
+           position: relative;
+           left: -10px;
+           top: 155px;
+       }
+   }
+   /* Get started by typing your email */
+    .landing-h1{
+        color: white;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        position: relative;
+        top: 160px;
+        left: -32px;
+        z-index: 1;
+    }
+    @media(max-width: 768px){
+        .landing-h1{
+            left: 7px;
+        }
+    }
+    @media(max-width: 700px){
+        .landing-h1{
+            left: 0px;
+        }
+    }
+    /* Lorem ipsum dolor sit amet, consectetur adipiscing elit. In imperdiet ligula massa, ac sollicitudin sapien tempor ac. Quisque maximus rutrum nulla et sodales */
+    .landing-h3{
+        color: white;
+        position: relative;
+        top: 150px;
+        z-index: 1;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    /* black overlay */
+    .overlay-black{
+        background-color: black;
+        height: 789px;
+        width: 100%;
+        opacity: .6;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: -1;
+    }
+    @keyframes navLinkFade{
+        from{
+            opacity: 0;
+            transform: translate(50px);
+        }
+        to{
+            opacity: 1;
+            transform: translate(0px);
+        }
+    }
+</style>
